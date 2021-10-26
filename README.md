@@ -32,3 +32,8 @@
 
 - haku toimii
 - login seuraavaksi
+
+### 26.10.
+
+- login toimii
+- localstorage seuraavaksi
