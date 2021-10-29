@@ -37,3 +37,12 @@
 
 - login toimii
 - localstorage seuraavaksi
+
+### 29.10.
+
+- muotoilua
+- localstorage parempi
+- alertit toimii suurelta osin. Onnistuneen ilmoituksen viivekatkaisu ei toiminut, jätetään sikseen toistaiseksi
+- taustakuva lisätty
+- haku siirretty headeriin
+- lisätty painike uloskirjautumiseen

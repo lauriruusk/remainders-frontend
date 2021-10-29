@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(150, 82, 82);
 }
 
 .App-link {
@@ -35,4 +35,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body {
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#actionform {
+  background-color: lightgray;
+  margin-top: 100px;
+  width: 35%;
+}
+
+footer {
+  margin-top: 50px;
+  background-color: rgb(189, 183, 183);
+  padding-bottom: 1px;
 }

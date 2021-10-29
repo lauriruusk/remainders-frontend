@@ -1,17 +1,17 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 
-const LoginForm = ({ hLog, setUser, setPass }) => (
-  <Form onSubmit={hLog}>
+const LoginForm = ({ hLog, setUsername, setPass }) => (
+  <Form className="position-center" onSubmit={hLog}>
     <Form.Group className="mb-3">
-      <Form.Label>Käyttäjä</Form.Label>
-      <Form.Control placeholder="username" onChange={({ target }) => setUser(target.value)} />
+      <Form.Label className="mt-1">Käyttäjä</Form.Label>
+      <Form.Control placeholder="käyttäjänimi" onChange={({ target }) => setUsername(target.value)} />
     </Form.Group>
     <Form.Group className="mb-3">
       <Form.Label>Salasana</Form.Label>
-      <Form.Control type="password" placeholder="password" onChange={({ target }) => setPass(target.value)} />
+      <Form.Control type="password" placeholder="salasana" onChange={({ target }) => setPass(target.value)} />
     </Form.Group>
-    <Button type="submit">Kirjaudu</Button>
+    <Button className="mb-3" type="submit">Kirjaudu</Button>
   </Form>
 );
 

@@ -10,8 +10,7 @@ const DataGrid = ({ rem }) => (
         {rem.map((r, idx) => (
           // eslint-disable-next-line react/no-array-index-key
           <Col key={idx}>
-            {/* <p>{r.title}</p> */}
-            <DCard rm={r} />
+            <DCard rm={r} idx={idx} />
           </Col>
         ))}
       </Row>

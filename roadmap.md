@@ -12,3 +12,6 @@
 - login
 - haku
 - taustakuva
+- jest testaukset
+
+

@@ -25,7 +25,6 @@ const getSearch = async (filt) => {
   const config = {
     headers: { Authorization: token },
   };
-  console.log(window.localStorage.getItem('loggedUser'));
   const response = await axios.get(`${baseUrl}/search/${filt}`, config);
   return response.data;
 };

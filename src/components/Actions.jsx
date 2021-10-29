@@ -1,21 +1,28 @@
 import React from 'react';
-import { Container, Col, Row } from 'react-bootstrap';
-import SearchForm from './SearchForm';
+import {
+  Container, Col, Row,
+} from 'react-bootstrap';
+// import SearchForm from './SearchForm';
 import LoginForm from './LoginForm';
-import LoggedInForm from './LoggedInForm';
+// import LoggedInForm from './LoggedInForm';
+import AlertForm from './AlertForm';
 
 const Actions = ({
-  searchRemainders, setFiltr, hLog, setUser, setPass, user,
+  hLog, setUsername, setPass, user, show, setShow, success,
 }) => (
-  <Container>
+  <Container id="actionform">
+    <Row>
+      {show === true && <AlertForm setShow={setShow} success={success} />}
+    </Row>
     <Row>
       <Col>
-        {user === null && <LoginForm hLog={hLog} setUser={setUser} setPass={setPass} />}
-        {user !== null && <LoggedInForm user={user} />}
+        {user === null && <LoginForm hLog={hLog} setUsername={setUsername} setPass={setPass} />}
+        {/* {user !== null && <LoggedInForm user={user} />} */}
+        {/* {user !== null && <SearchForm search={searchRemainders} setFlt={setFiltr} />} */}
       </Col>
-      <Col>
-        <SearchForm search={searchRemainders} setFlt={setFiltr} />
-      </Col>
+      {/* <Col>
+
+      </Col> */}
     </Row>
   </Container>
 );
