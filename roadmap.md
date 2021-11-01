@@ -14,4 +14,8 @@
 - taustakuva
 - jest testaukset
 
+### TODO
+
+- testit
+- rekisteröinti
 
