@@ -46,3 +46,9 @@
 - taustakuva lisätty
 - haku siirretty headeriin
 - lisätty painike uloskirjautumiseen
+
+### 2.11.
+
+- renderöintitestejä
+- osa testeistä vaikuttaa pelkistetyltä. TODO: selvitä lisää testitavoista, yritä saada monipuolisuutta
+- TODO: selvitä kirjautumisen ja hakemisen toiminnallisuuden testausmahdollisuudet

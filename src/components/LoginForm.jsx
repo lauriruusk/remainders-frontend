@@ -8,7 +8,7 @@ const LoginForm = ({ hLog, setUsername, setPass }) => (
       <Form.Control placeholder="käyttäjänimi" onChange={({ target }) => setUsername(target.value)} />
     </Form.Group>
     <Form.Group className="mb-3">
-      <Form.Label>Salasana</Form.Label>
+      <Form.Label className="mt-1">Salasana</Form.Label>
       <Form.Control type="password" placeholder="salasana" onChange={({ target }) => setPass(target.value)} />
     </Form.Group>
     <Button className="mb-3" type="submit">Kirjaudu</Button>
