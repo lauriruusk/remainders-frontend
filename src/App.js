@@ -11,6 +11,8 @@ import DataGrid from './components/DataGrid';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import loginService from './services/login';
+import registerService from './services/register';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 const App = () => {
@@ -18,6 +20,7 @@ const App = () => {
   const [filtr, setFiltr] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
   const [user, setUser] = useState(null);
   const [show, setShow] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -73,6 +76,26 @@ const App = () => {
     }
   };
 
+  const handleRegister = async (event) => {
+    event.preventDefault();
+    try {
+      const newUser = {
+        username: { username },
+        email: { email },
+        token: '',
+      };
+
+      const kaytt = await registerService.register({
+        username, email, password,
+      });
+      setUsername('');
+      setEmail('');
+      setPassword('');
+    } catch (exception) {
+      console.log(exception);
+    }
+  };
+
   return (
     <div className="App">
       <Header user={user} search={searchRemainders} setFlt={setFiltr} />
@@ -80,6 +103,8 @@ const App = () => {
         hLog={handleLogin}
         setUsername={setUsername}
         setPass={setPassword}
+        setEmail={setEmail}
+        hReg={handleRegister}
         user={user}
         setShow={setShow}
         show={show}
