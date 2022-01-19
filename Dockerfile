@@ -25,4 +25,4 @@ COPY --from=build-stage /usr/src/app/nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
-# ENTRYPOINT [ "start-nginx.sh" ]
+ENTRYPOINT [ "start-nginx.sh" ]

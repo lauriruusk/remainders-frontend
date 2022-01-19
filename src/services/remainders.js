@@ -4,7 +4,7 @@ const baseUrl = 'https://localhost:8888/api/v1';
 let token = null;
 
 const setToken = (newToken) => {
-  token = `${newToken}`;
+  token = `Bearer ${newToken}`;
 };
 
 const getLatest = () => {
@@ -26,6 +26,7 @@ const getSearch = async (filt) => {
     headers: { Authorization: token },
   };
   const response = await axios.get(`${baseUrl}/search/${filt}`, config);
+  console.log("search:" + response);
   return response.data;
 };
 

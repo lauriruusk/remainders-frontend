@@ -12,6 +12,14 @@ describe('Remainders ', function() {
         cy.get('#username').type('Matti Möttönen');
         cy.get('#password').type('tosisalainen');
         cy.get('#login').click();
-        cy.contains('olet nyt kirjautunut');
+        cy.contains('Olet nyt kirjautunut');
+    })
+
+    it('verkkoyhteys toimii', function() {
+        cy.visit('https://localhost:8888/healthz');
+        cy.contains('operational')
+    })
+    it('token vanhenee', function() {
+
     })
 })

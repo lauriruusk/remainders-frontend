@@ -11,6 +11,7 @@ import DataGrid from './components/DataGrid';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import loginService from './services/login';
+import errorManager from './controllers/errorctrl';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -41,6 +42,8 @@ const App = () => {
       .getSearch(filtr)
       .then((response) => {
         setRemainders(response);
+      }).catch((e) => {
+        errorManager(e);
       });
   };
 
@@ -49,12 +52,17 @@ const App = () => {
 
     try {
       const kaytt = {
-        uname: { username },
+        uname: username,
         token: '',
       };
-      kaytt.token = await loginService.login({
+      try {
+        kaytt.token = await loginService.login({
         username, password,
       });
+      } catch (e) {
+        errorManager(e)
+      }
+      
       // console.log(kaytt);
       window.localStorage.setItem(
         'loggedUser', JSON.stringify(kaytt),
@@ -69,7 +77,7 @@ const App = () => {
       setSuccess(true);
       setShow(true);
     } catch (exception) {
-      console.log(exception);
+      errorManager(exception);
       setSuccess(false);
       setShow(true);
     }
