@@ -1,14 +1,15 @@
 import React from 'react';
-// import { Container, Text } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 const LoggedInForm = ({ user }) => (
-  <div>
-    <p>
-      Logged in as
+  <Container>
+    <p className="text-light" id="logged">
+      Kirjautuneena
       {' '}
-      {user.username}
+      {user.uname}
+      {' '}
     </p>
-  </div>
+  </Container>
 );
 
 export default LoggedInForm;

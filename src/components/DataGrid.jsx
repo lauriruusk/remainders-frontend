@@ -10,9 +10,8 @@ const DataGrid = ({ rem }) => {
         <Container>
           <Row xs={1} md={2} lg={3} className="g-4">
             <Col>
-              <DCard rm={['']} idx={0} />
+              <DCard rm={[{"to": "testivastaanottaja", "title": "testikortti", "message": "Jos näet tämän viestin, ohjelma ei saa dataa palvelimelta", "updated_at": new Date() }]} idx={0} />
             </Col>
-
           </Row>
         </Container>
       </div>
@@ -20,7 +19,7 @@ const DataGrid = ({ rem }) => {
   }
   return (
     <div>
-      <Container>
+      <Container className="cardContainer">
         <Row xs={1} md={2} lg={3} className="g-4">
           {rem.map((r, idx) => (
             <Col key={idx}>

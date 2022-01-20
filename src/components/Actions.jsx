@@ -2,27 +2,20 @@ import React from 'react';
 import {
   Container, Col, Row,
 } from 'react-bootstrap';
-// import SearchForm from './SearchForm';
 import LoginForm from './LoginForm';
-// import LoggedInForm from './LoggedInForm';
 import AlertForm from './AlertForm';
 
 const Actions = ({
-  hLog, setUsername, setPass, user, show, setShow, success,
+  hLog, setUsername, setPass, user, show, setShow, success, loginMsg
 }) => (
   <Container id="actionform">
     <Row>
-      {show === true && <AlertForm setShow={setShow} success={success} />}
+      {show === true && <AlertForm setShow={setShow} success={success} loginMsg={loginMsg} />}
     </Row>
     <Row>
       <Col>
         {user === null && <LoginForm hLog={hLog} setUsername={setUsername} setPass={setPass} />}
-        {/* {user !== null && <LoggedInForm user={user} />} */}
-        {/* {user !== null && <SearchForm search={searchRemainders} setFlt={setFiltr} />} */}
       </Col>
-      {/* <Col>
-
-      </Col> */}
     </Row>
   </Container>
 );

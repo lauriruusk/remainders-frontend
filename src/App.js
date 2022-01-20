@@ -3,7 +3,6 @@
 /* eslint-disable object-curly-newline */
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/react-in-jsx-scope */
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from 'react';
 import remindServe from './services/remainders';
 import Actions from './components/Actions';
@@ -20,10 +19,10 @@ const App = () => {
   const [filtr, setFiltr] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
   const [user, setUser] = useState(null);
   const [show, setShow] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [loginMsg, setLoginMsg] = useState('');
 
   useEffect(async () => {
     const loggedUserJSON = window.localStorage.getItem('loggedUser');
@@ -44,6 +43,7 @@ const App = () => {
         setRemainders(response);
       }).catch((e) => {
         errorManager(e);
+        logout();
       });
   };
 
@@ -55,15 +55,11 @@ const App = () => {
         uname: username,
         token: '',
       };
-      try {
-        kaytt.token = await loginService.login({
+      
+      kaytt.token = await loginService.login({
         username, password,
       });
-      } catch (e) {
-        errorManager(e)
-      }
       
-      // console.log(kaytt);
       window.localStorage.setItem(
         'loggedUser', JSON.stringify(kaytt),
       );
@@ -74,48 +70,33 @@ const App = () => {
       setPassword('');
       const tempRemind = await remindServe.getAsyncLatest();
       setRemainders(tempRemind);
+      setLoginMsg('Olet nyt kirjautunut!')
       setSuccess(true);
       setShow(true);
     } catch (exception) {
-      errorManager(exception);
+      setLoginMsg('Väärä käyttäjätunnus tai salasana!');
       setSuccess(false);
       setShow(true);
     }
   };
 
-  // const handleRegister = async (event) => {
-  //   event.preventDefault();
-  //   try {
-  //     const newUser = {
-  //       username: { username },
-  //       email: { email },
-  //       token: '',
-  //     };
-
-  //     const kaytt = await registerService.register({
-  //       username, email, password,
-  //     });
-  //     setUsername('');
-  //     setEmail('');
-  //     setPassword('');
-  //   } catch (exception) {
-  //     console.log(exception);
-  //   }
-  // };
+  const logout = () => {
+    window.localStorage.removeItem('loggedUser');
+    window.location.reload();
+  };
 
   return (
     <div className="App">
-      <Header user={user} search={searchRemainders} setFlt={setFiltr} />
+      <Header user={user} search={searchRemainders} setFlt={setFiltr} logout={logout} />
       <Actions
         hLog={handleLogin}
         setUsername={setUsername}
         setPass={setPassword}
-        setEmail={setEmail}
-        // hReg={handleRegister}
         user={user}
         setShow={setShow}
         show={show}
         success={success}
+        loginMsg={loginMsg}
       />
       {user !== null && <DataGrid rem={remainders} />}
       <Footer />
