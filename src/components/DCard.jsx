@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 
+<<<<<<< HEAD
 const DCard = ({ rm }) => (
   <div>
     {/* <p>{rm}</p> */}
@@ -10,6 +11,38 @@ const DCard = ({ rm }) => (
         <Card.Subtitle>{rm.title}</Card.Subtitle>
         <Card.Text>{rm.message}</Card.Text>
         <Card.Text>{rm.updated_at}</Card.Text>
+=======
+// muistutuskortti. 
+const DCard = ({ rm, idx }) => (
+  <div>
+    <Card>
+      <Card.Body>
+        <Card.Text className="text-center">
+          {idx + 1}
+          .
+        </Card.Text>
+        <Card.Text>
+          <strong>Vastaanottaja:</strong>
+          {' '}
+          {rm.to}
+        </Card.Text>
+        <Card.Text>
+          <strong>Aihe:</strong>
+          {' '}
+          {rm.title}
+        </Card.Text>
+        <Card.Text>
+          <strong>Muistutus:</strong>
+          <br />
+          {' '}
+          {rm.message}
+        </Card.Text>
+        <Card.Text>
+          <strong>Generoitu:</strong>
+          {' '}
+          {rm.updated_at}
+        </Card.Text>
+>>>>>>> f46cfdca6e1a0000d21f91f51778076e7661d2b6
       </Card.Body>
     </Card>
   </div>

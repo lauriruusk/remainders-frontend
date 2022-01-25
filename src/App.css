@@ -1,5 +1,9 @@
 .App {
+<<<<<<< HEAD
   text-align: center;
+=======
+  text-align: left;
+>>>>>>> f46cfdca6e1a0000d21f91f51778076e7661d2b6
 }
 
 .App-logo {
@@ -21,7 +25,11 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+<<<<<<< HEAD
   color: white;
+=======
+  color: rgb(150, 82, 82);
+>>>>>>> f46cfdca6e1a0000d21f91f51778076e7661d2b6
 }
 
 .App-link {
@@ -36,3 +44,27 @@
     transform: rotate(360deg);
   }
 }
+<<<<<<< HEAD
+=======
+
+body {
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#actionform {
+  background-color: lightgray;
+  margin-top: 100px;
+  width: 35%;
+}
+
+footer {
+  margin-top: 50px;
+  background-color: rgb(189, 183, 183);
+  padding-bottom: 1px;
+}
+
+#logged {
+  margin-top: 22px;
+}
+>>>>>>> f46cfdca6e1a0000d21f91f51778076e7661d2b6
