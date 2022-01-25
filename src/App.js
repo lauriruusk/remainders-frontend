@@ -24,7 +24,10 @@ const App = () => {
   const [success, setSuccess] = useState(false);
   const [loginMsg, setLoginMsg] = useState('');
 
-  useEffect(async () => {
+  // mikäli käyttäjä on jo kirjautunut, hakee selaimen muistista kirjautumistiedot
+  // ja hakee muistutukset.
+  useEffect(() => {
+    const fetchRemainders = async () => {
     const loggedUserJSON = window.localStorage.getItem('loggedUser');
     if (loggedUserJSON) {
       const usr = JSON.parse(loggedUserJSON);
@@ -33,8 +36,12 @@ const App = () => {
       const refreshRemind = await remindServe.getAsyncLatest();
       setRemainders(refreshRemind);
     }
+    }
+    fetchRemainders();
   }, []);
 
+  // hakufunktio. etsii annetun hakusanan sisältäviä muistutuksia. Mikäli token on 
+  // vanhentunut, palauttaa virheilmoituksen ja kirjautuu ulos.
   const searchRemainders = (event) => {
     event.preventDefault();
     remindServe
@@ -47,6 +54,9 @@ const App = () => {
       });
   };
 
+  // kirjautuminen. hakee käyttäjänimen ja salasanan perusteella backendilta tokenin, ja tallentaa
+  // sen selaimen muistiin. Kirjautumisen onnistuessa hakee muistutuksen näkyville, ja ilmoittaa
+  // onnistumisesta vihreällä ikkunalla. Epäonnistuminen ilmoitetaan punaisella ikkunalla.
   const handleLogin = async (event) => {
     event.preventDefault();
 
@@ -80,11 +90,15 @@ const App = () => {
     }
   };
 
+  // uloskirjautuminen. poistaa kirjautumistiedot selaimen muistista ja lataa sivun uudestaan.
   const logout = () => {
     window.localStorage.removeItem('loggedUser');
     window.location.reload();
   };
 
+  // varsinainen näkymä. Header-osiossa otsikko, ehtojen täyttyessä kuka on kirjautunut, haku ja
+  // uloskirjautuminen. Pääosassa näytetään joko kirjautumisikkuna tai muistutuskortit. Footerissa
+  // organisaation tiedot.
   return (
     <div className="App">
       <Header user={user} search={searchRemainders} setFlt={setFiltr} logout={logout} />

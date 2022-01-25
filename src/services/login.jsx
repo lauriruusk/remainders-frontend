@@ -1,6 +1,7 @@
 import axios from 'axios';
+import config from '../config'
 
-const baseUrl = 'https://localhost:8888/login';
+const baseUrl = config.api_url + '/login';
 
 const login = async (credentials) => {
   const response = await axios.post(baseUrl, credentials);
@@ -8,4 +9,6 @@ const login = async (credentials) => {
   return response.data.token;
 };
 
-export default { login };
+const exportPackage = { login };
+
+export default exportPackage;

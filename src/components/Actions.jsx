@@ -5,6 +5,7 @@ import {
 import LoginForm from './LoginForm';
 import AlertForm from './AlertForm';
 
+// Actions-komponentti. sisältää kirjautumisen virhe/onnistumisilmoituksen ja varsinaisen kirjautumisikkunan
 const Actions = ({
   hLog, setUsername, setPass, user, show, setShow, success, loginMsg
 }) => (

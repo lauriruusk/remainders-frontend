@@ -1,5 +1,6 @@
 import React from 'react';
 
+//Footer pääsivulle
 const Footer = () => (
   <footer>
     <p className="foottext">Riveria</p>

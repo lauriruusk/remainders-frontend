@@ -2,6 +2,7 @@
 import React from 'react';
 import { Alert } from 'react-bootstrap';
 
+// tämä osa ilmoittaa onnistuneesta tai virheellisestä kirjautumisesta.
 const AlertForm = ({ setShow, success, loginMsg }) => {
   if (!success) {
     return (

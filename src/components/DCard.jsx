@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 
+// muistutuskortti. 
 const DCard = ({ rm, idx }) => (
   <div>
     <Card>

@@ -3,6 +3,8 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import DCard from './DCard';
 
+// tähän ruudukkoon tuodaan haetut muistutukset kortteina. mikäli muistutuksia ei jostain syystä
+// saada tuotua, luo yhden kortin, jossa asiasta mainitaan
 const DataGrid = ({ rem }) => {
   if (!Array.isArray(rem)) {
     return (

@@ -1,18 +1,23 @@
 import axios from 'axios';
+import config from '../config'
 
-const baseUrl = 'https://localhost:8888/api/v1';
+// perusurl, josta johdetaan funktioiden osoitteet, ja token-muuttuja.
+const baseUrl = config.api_url + '/api/v1';
 let token = null;
 
+// asettaa käyttäjälle annetun tokenin
 const setToken = (newToken) => {
   token = `Bearer ${newToken}`;
 };
 
+// hakee viimeisimmät muistutukset
 const getLatest = () => {
   const request = axios.get(`${baseUrl}/latest`);
 
   return request.then((response) => response.data);
 };
 
+// asynkronoitu haku viimeisimmille muistutuksille
 const getAsyncLatest = async () => {
   const config = {
     headers: { Authorization: token },
@@ -21,6 +26,7 @@ const getAsyncLatest = async () => {
   return response.data;
 };
 
+// hakee muistutuksista kriteerin täyttäviä.
 const getSearch = async (filt) => {
   const config = {
     headers: { Authorization: token },
@@ -30,6 +36,8 @@ const getSearch = async (filt) => {
   return response.data;
 };
 
-export default {
+const exportPackage = {
   getLatest, getSearch, setToken, getAsyncLatest,
 };
+
+export default exportPackage;
