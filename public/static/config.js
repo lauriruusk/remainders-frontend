@@ -1,1 +1,1 @@
-window.API_URL = 'https://192.168.8.100:8888';
+window.API_URL = 'https://localhost:8888';

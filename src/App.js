@@ -1,20 +1,8 @@
-<<<<<<< HEAD
-=======
 /* eslint-disable no-unused-vars */
->>>>>>> f46cfdca6e1a0000d21f91f51778076e7661d2b6
 /* eslint-disable no-console */
 /* eslint-disable object-curly-newline */
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/react-in-jsx-scope */
-<<<<<<< HEAD
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState, useEffect } from 'react';
-import remindServe from './services/remainders';
-import SearchForm from './components/SearchForm';
-import DataGrid from './components/DataGrid';
-// import Header from './components/Header';
-// import Footer from './components/Footer';
-=======
 import { useState, useEffect } from 'react';
 import remindServe from './services/remainders';
 import Actions from './components/Actions';
@@ -25,22 +13,10 @@ import loginService from './services/login';
 import errorManager from './controllers/errorctrl';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
->>>>>>> f46cfdca6e1a0000d21f91f51778076e7661d2b6
 
 const App = () => {
   const [remainders, setRemainders] = useState([]);
   const [filtr, setFiltr] = useState('');
-<<<<<<< HEAD
-
-  useEffect(() => {
-    remindServe
-      .getLatest()
-      .then((response) => {
-        setRemainders(response);
-      });
-  }, []);
-
-=======
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [user, setUser] = useState(null);
@@ -66,24 +42,12 @@ const App = () => {
 
   // hakufunktio. etsii annetun hakusanan sisältäviä muistutuksia. Mikäli token on 
   // vanhentunut, palauttaa virheilmoituksen ja kirjautuu ulos.
->>>>>>> f46cfdca6e1a0000d21f91f51778076e7661d2b6
   const searchRemainders = (event) => {
     event.preventDefault();
     remindServe
       .getSearch(filtr)
       .then((response) => {
         setRemainders(response);
-<<<<<<< HEAD
-      });
-  };
-
-  return (
-    <div className="App">
-      {/* <Header /> */}
-      <SearchForm search={searchRemainders} setFlt={setFiltr} />
-      <DataGrid rem={remainders} />
-      {/* <Footer /> */}
-=======
       }).catch((e) => {
         errorManager(e);
         logout();
@@ -150,7 +114,6 @@ const App = () => {
       />
       {user !== null && <DataGrid rem={remainders} />}
       <Footer />
->>>>>>> f46cfdca6e1a0000d21f91f51778076e7661d2b6
     </div>
   );
 };

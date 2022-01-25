@@ -1,19 +1,4 @@
 import axios from 'axios';
-<<<<<<< HEAD
-
-const baseUrl = 'https://localhost:8888/api/v1';
-const getLatest = () => {
-  const request = axios.get(`${baseUrl}/latest`);
-  return request.then((response) => response.data);
-};
-
-const getSearch = (filt) => {
-  const request = axios.get(`${baseUrl}/search/${filt}`);
-  return request.then((response) => response.data);
-};
-
-export default { getLatest, getSearch };
-=======
 import config from '../config'
 
 // perusurl, josta johdetaan funktioiden osoitteet, ja token-muuttuja.
@@ -37,8 +22,13 @@ const getAsyncLatest = async () => {
   const config = {
     headers: { Authorization: token },
   };
-  const response = await axios.get(`${baseUrl}/latest`, config);
-  return response.data;
+  try {
+    const response = await axios.get(`${baseUrl}/latest`, config);
+    return response.data;
+  } catch (e) {
+    console.log(e);
+  }
+  
 };
 
 // hakee muistutuksista kriteerin täyttäviä.
@@ -56,4 +46,3 @@ const exportPackage = {
 };
 
 export default exportPackage;
->>>>>>> f46cfdca6e1a0000d21f91f51778076e7661d2b6

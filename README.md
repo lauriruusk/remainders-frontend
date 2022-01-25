@@ -31,9 +31,6 @@
 ### 22.10.
 
 - haku toimii
-<<<<<<< HEAD
-- login seuraavaksi
-=======
 - login seuraavaksi
 
 ### 26.10.
@@ -55,4 +52,3 @@
 - renderöintitestejä
 - osa testeistä vaikuttaa pelkistetyltä. TODO: selvitä lisää testitavoista, yritä saada monipuolisuutta
 - TODO: selvitä kirjautumisen ja hakemisen toiminnallisuuden testausmahdollisuudet
->>>>>>> f46cfdca6e1a0000d21f91f51778076e7661d2b6
