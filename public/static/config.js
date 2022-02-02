@@ -1,1 +1,1 @@
-window.API_URL = 'https://localhost:8888';
+window.API_URL = 'http://api.developersolo.com';
