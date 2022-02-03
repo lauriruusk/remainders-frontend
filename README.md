@@ -31,4 +31,28 @@
 ### 22.10.
 
 - haku toimii
+<<<<<<< HEAD
 - login seuraavaksi
+=======
+- login seuraavaksi
+
+### 26.10.
+
+- login toimii
+- localstorage seuraavaksi
+
+### 29.10.
+
+- muotoilua
+- localstorage parempi
+- alertit toimii suurelta osin. Onnistuneen ilmoituksen viivekatkaisu ei toiminut, jätetään sikseen toistaiseksi
+- taustakuva lisätty
+- haku siirretty headeriin
+- lisätty painike uloskirjautumiseen
+
+### 2.11.
+
+- renderöintitestejä
+- osa testeistä vaikuttaa pelkistetyltä. TODO: selvitä lisää testitavoista, yritä saada monipuolisuutta
+- TODO: selvitä kirjautumisen ja hakemisen toiminnallisuuden testausmahdollisuudet
+>>>>>>> f46cfdca6e1a0000d21f91f51778076e7661d2b6
