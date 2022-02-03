@@ -1,4 +1,22 @@
 import axios from 'axios';
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+const baseUrl = 'https://localhost:8888/api/v1';
+const getLatest = () => {
+  const request = axios.get(`${baseUrl}/latest`);
+  return request.then((response) => response.data);
+};
+
+const getSearch = (filt) => {
+  const request = axios.get(`${baseUrl}/search/${filt}`);
+  return request.then((response) => response.data);
+};
+
+export default { getLatest, getSearch };
+=======
+>>>>>>> tests2
 import config from '../config'
 
 // perusurl, josta johdetaan funktioiden osoitteet, ja token-muuttuja.
@@ -46,3 +64,7 @@ const exportPackage = {
 };
 
 export default exportPackage;
+<<<<<<< HEAD
+=======
+>>>>>>> f46cfdca6e1a0000d21f91f51778076e7661d2b6
+>>>>>>> tests2

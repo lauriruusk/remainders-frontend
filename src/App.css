@@ -1,5 +1,13 @@
 .App {
+<<<<<<< HEAD
   text-align: left;
+=======
+<<<<<<< HEAD
+  text-align: center;
+=======
+  text-align: left;
+>>>>>>> f46cfdca6e1a0000d21f91f51778076e7661d2b6
+>>>>>>> tests2
 }
 
 .App-logo {
@@ -21,7 +29,15 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+<<<<<<< HEAD
   color: rgb(150, 82, 82);
+=======
+<<<<<<< HEAD
+  color: white;
+=======
+  color: rgb(150, 82, 82);
+>>>>>>> f46cfdca6e1a0000d21f91f51778076e7661d2b6
+>>>>>>> tests2
 }
 
 .App-link {
@@ -36,6 +52,11 @@
     transform: rotate(360deg);
   }
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> tests2
 
 body {
   background-size: cover;
@@ -57,3 +78,7 @@ footer {
 #logged {
   margin-top: 22px;
 }
+<<<<<<< HEAD
+=======
+>>>>>>> f46cfdca6e1a0000d21f91f51778076e7661d2b6
+>>>>>>> tests2

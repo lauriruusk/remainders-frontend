@@ -1,4 +1,17 @@
 import React from 'react';
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+const Header = () => (
+  <div>
+    <head>
+      <p>placeholder</p>
+    </head>
+  </div>
+);
+=======
+>>>>>>> tests2
 import { Container, Navbar, Button } from 'react-bootstrap';
 import SearchForm from './SearchForm';
 import LoggedInForm from './LoggedInForm';
@@ -21,5 +34,9 @@ const Header = ({ user, search, setFlt, logout }) => {
     </Navbar>
   );
 };
+<<<<<<< HEAD
+=======
+>>>>>>> f46cfdca6e1a0000d21f91f51778076e7661d2b6
+>>>>>>> tests2
 
 export default Header;
