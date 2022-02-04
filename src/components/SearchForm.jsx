@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Form, Button } from 'react-bootstrap';
-import { Form, Button, FormControl } from 'react-bootstrap';
 const SearchForm = ({ search, setFlt }) => (
   <Form onSubmit={search}>
     <Form.Group className="mb-3" controlId="searchFunc">
