@@ -1,1 +1,1 @@
-window.API_URL = 'http://api.developersolo.com';
+window.API_URL = 'https://api.developersolo.com';
