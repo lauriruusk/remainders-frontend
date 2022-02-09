@@ -53,3 +53,17 @@
 - osa testeistä vaikuttaa pelkistetyltä. TODO: selvitä lisää testitavoista, yritä saada monipuolisuutta
 - TODO: selvitä kirjautumisen ja hakemisen toiminnallisuuden testausmahdollisuudet
 
+## Yleistä
+
+Remainders on Riverian muistutusten selaukseen tarkoitettu sovellus. 
+
+## Käyttö
+
+Ohjelma vaatii hyväksytyn käyttäjänimen ja salasanan. Nämä ovat saatavissa järjestelmänvalvojalta. 
+Oletuksena ohjelma näyttää 25 viimeisintä muistutusta.
+
+### Haku
+
+Haku tapahtuu kirjoittamalla kenttään kriteeri ja painamalla "Hae". Ohjelma hakee osumia muistutusten lähettäjän sähköpostiosoitteen perusteella.
+
+## Rakenne

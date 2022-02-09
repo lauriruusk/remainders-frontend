@@ -29,15 +29,22 @@ const App = () => {
   useEffect(() => {
     const fetchRemainders = async () => {
     const loggedUserJSON = window.localStorage.getItem('loggedUser');
-    if (loggedUserJSON) {
+    try {
+      if (loggedUserJSON) {
       const usr = JSON.parse(loggedUserJSON);
       setUser(usr);
       remindServe.setToken(usr.token);
       const refreshRemind = await remindServe.getAsyncLatest();
       setRemainders(refreshRemind);
+      }
+      fetchRemainders();
+    } catch (e) {
+      errorManager(e);
+      logout();
     }
+    
     }
-    fetchRemainders();
+    
   }, []);
 
   // hakufunktio. etsii annetun hakusanan sisältäviä muistutuksia. Mikäli token on 
