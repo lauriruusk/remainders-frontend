@@ -51,15 +51,22 @@ const App = () => {
   // vanhentunut, palauttaa virheilmoituksen ja kirjautuu ulos.
   const searchRemainders = (event) => {
     event.preventDefault();
+    console.log(filtr);
+    if(filtr === '') {
+      remindServe.getAsyncLatest().then((response) => {setRemainders(response)})
+    } else {
       remindServe
       .getSearch(filtr)
       .then((response) => {
         setRemainders(response);
       }).catch((e) => {
         errorManager(e);
-        logout();
+        if(e.status === 401) {
+          logout();
+        }
+        
       });
-
+    }
   };
 
   // kirjautuminen. hakee käyttäjänimen ja salasanan perusteella backendilta tokenin, ja tallentaa
