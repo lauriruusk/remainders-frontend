@@ -67,3 +67,7 @@ Oletuksena ohjelma näyttää 25 viimeisintä muistutusta.
 Haku tapahtuu kirjoittamalla kenttään kriteeri ja painamalla "Hae". Ohjelma hakee osumia muistutusten lähettäjän sähköpostiosoitteen perusteella.
 
 ## Rakenne
+
+![Ohjelman rakennekaavio](rakenne.png)
+
+Ohjelman komponentit ovat kansiossa *components*. Pääkomponentteina ovat *Actions*, *DataGrid*, *Header* ja *Footer*.

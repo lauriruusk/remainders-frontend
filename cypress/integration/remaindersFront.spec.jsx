@@ -17,7 +17,20 @@ describe('Remainders ', function() {
     it('haku toimii', function() {
         cy.get('#ctrl').type('Matti');
         cy.get('#searchbtn').click();
-        cy.contains('Matti');
+        cy.contains('matti');
+    })
+
+    it('toinen haku', function() {
+        cy.get('#ctrl').type('nina');
+        cy.get('#searchbtn').click();
+        cy.contains('nina');
+    })
+
+    it('sivun päivittyessä istunto pysyy', function() {
+        cy.wait(1000);
+        cy.reload();
+        
+        cy.contains('Kirjautuneena');
     })
     
     it('token vanhenee', function() {

@@ -28,30 +28,30 @@ const App = () => {
   // ja hakee muistutukset.
   useEffect(() => {
     const fetchRemainders = async () => {
-    const loggedUserJSON = window.localStorage.getItem('loggedUser');
-    try {
-      if (loggedUserJSON) {
-      const usr = JSON.parse(loggedUserJSON);
-      setUser(usr);
-      remindServe.setToken(usr.token);
-      const refreshRemind = await remindServe.getAsyncLatest();
-      setRemainders(refreshRemind);
+      const loggedUserJSON = window.localStorage.getItem('loggedUser');
+      try {
+        if (loggedUserJSON) {
+        const usr = JSON.parse(loggedUserJSON);
+        setUser(usr);
+        remindServe.setToken(usr.token);
+        const refreshRemind = await remindServe.getAsyncLatest();
+        setRemainders(refreshRemind);
+        }
+        
+      } catch (e) {
+        errorManager(e);
+        logout();
       }
-      fetchRemainders();
-    } catch (e) {
-      errorManager(e);
-      logout();
-    }
     
     }
-    
+    fetchRemainders();
   }, []);
 
   // hakufunktio. etsii annetun hakusanan sisältäviä muistutuksia. Mikäli token on 
   // vanhentunut, palauttaa virheilmoituksen ja kirjautuu ulos.
   const searchRemainders = (event) => {
     event.preventDefault();
-    remindServe
+      remindServe
       .getSearch(filtr)
       .then((response) => {
         setRemainders(response);
@@ -59,6 +59,7 @@ const App = () => {
         errorManager(e);
         logout();
       });
+
   };
 
   // kirjautuminen. hakee käyttäjänimen ja salasanan perusteella backendilta tokenin, ja tallentaa
@@ -80,7 +81,7 @@ const App = () => {
       window.localStorage.setItem(
         'loggedUser', JSON.stringify(kaytt),
       );
-
+      console.log(window.localStorage.getItem('loggedUser'))
       remindServe.setToken(kaytt.token);
       setUser(kaytt);
       setUsername('');
