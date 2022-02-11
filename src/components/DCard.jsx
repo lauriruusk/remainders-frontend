@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap';
 
 const DCard = ({ rm, idx }) => (
   <div>
-    <Card>
+    <Card className="bg-yellow">
       <Card.Body>
         <Card.Text className="text-center">
           {idx + 1}

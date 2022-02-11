@@ -13,6 +13,7 @@ import loginService from './services/login';
 import errorManager from './controllers/errorctrl';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+// import './scss/custom.scss'
 
 const App = () => {
   const [remainders, setRemainders] = useState([]);

@@ -71,3 +71,19 @@ Haku tapahtuu kirjoittamalla kenttään kriteeri ja painamalla "Hae". Ohjelma ha
 ![Ohjelman rakennekaavio](rakenne.png)
 
 Ohjelman komponentit ovat kansiossa *components*. Pääkomponentteina ovat *Actions*, *DataGrid*, *Header* ja *Footer*.
+
+### Actions
+
+Tämä komponentti sisältää alikomponentit *AlertForm* ja *LoginForm*. Loginformilla käsitellään kirjautuminen, toiminnan tuloksesta visuaalinen palaute Alertformiin: onnistuminen vihreällä taustalla, epäonnistuminen punaisella.
+
+### DataGrid
+
+Tähän komponenttiin tulostetaan muistutukset *DCard*-komponentin mukaisesti.
+
+### Header
+
+Tämä komponentti huolehtii hausta *SearchForm*-komponentilla. Lisäksi komponenttiin on liitetty *logout()*-funktio, jonka avulla kirjaudutaan ulos.
+
+### Footer
+
+Tässä komponentissa 
