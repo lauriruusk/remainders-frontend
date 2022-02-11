@@ -26,6 +26,16 @@ describe('Remainders ', function() {
         cy.contains('nina');
     })
 
+    it('ensin haku, sitten tyhjä haku', function () {
+        cy.get('#ctrl').type('nina');
+        cy.get('#searchbtn').click();
+        cy.contains('nina');
+        cy.get('#ctrl').clear();
+        cy.get('#searchbtn').click();
+        cy.wait(1000);
+        cy.get('.cardContainer').find('.card').its('length').should('eq', 25);
+    })
+
     it('sivun päivittyessä istunto pysyy', function() {
         cy.wait(1000);
         cy.reload();
