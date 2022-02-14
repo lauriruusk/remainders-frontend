@@ -52,7 +52,7 @@ const App = () => {
   // vanhentunut, palauttaa virheilmoituksen ja kirjautuu ulos.
   const searchRemainders = (event) => {
     event.preventDefault();
-    console.log(filtr);
+    // console.log(filtr);
     if(filtr === '') {
       remindServe.getAsyncLatest().then((response) => {setRemainders(response)})
     } else {
@@ -89,7 +89,7 @@ const App = () => {
       window.localStorage.setItem(
         'loggedUser', JSON.stringify(kaytt),
       );
-      console.log(window.localStorage.getItem('loggedUser'))
+      // console.log(window.localStorage.getItem('loggedUser'))
       remindServe.setToken(kaytt.token);
       setUser(kaytt);
       setUsername('');

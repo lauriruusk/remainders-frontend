@@ -2,10 +2,10 @@ import React from 'react';
 import { Form, Button, FormControl } from 'react-bootstrap';
 
 const SearchForm = ({ search, setFlt }) => {
-  const searchActions = () => {
-    search();
-    document.getElementById("ctrl").innerText('');
-  }
+  // const searchActions = () => {
+  //   search();
+  //   document.getElementById("ctrl").innerText('');
+  // }
   return (
     <Form className="d-flex p-2" onSubmit={search}>
       <FormControl className="me-2" id="ctrl" type="text" placeholder="hakuteksti" onChange={({ target }) => setFlt(target.value)} />
