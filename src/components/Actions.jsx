@@ -9,7 +9,7 @@ import AlertForm from './AlertForm';
 const Actions = ({
   hLog, setUsername, setPass, user, show, setShow, success, loginMsg
 }) => (
-  <Container id="actionform">
+  <Container id="actionform" className="bg-black">
     <Row>
       {show === true && <AlertForm setShow={setShow} success={success} loginMsg={loginMsg} />}
     </Row>

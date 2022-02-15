@@ -4,14 +4,14 @@ import { Form, Button } from 'react-bootstrap';
 const LoginForm = ({ hLog, setUsername, setPass }) => (
   <Form className="position-center" onSubmit={hLog}>
     <Form.Group className="mb-3">
-      <Form.Label className="mt-1">Käyttäjä</Form.Label>
+      <Form.Label className="mt-1 text-light">Käyttäjä</Form.Label>
       <Form.Control id="username" placeholder="käyttäjänimi" onChange={({ target }) => setUsername(target.value)} />
     </Form.Group>
     <Form.Group className="mb-3">
-      <Form.Label className="mt-1">Salasana</Form.Label>
+      <Form.Label className="mt-1 text-light">Salasana</Form.Label>
       <Form.Control id="password" type="password" placeholder="salasana" onChange={({ target }) => setPass(target.value)} />
     </Form.Group>
-    <Button id="login" className="mb-3" type="submit">Kirjaudu</Button>
+    <Button id="login" className="mb-3 bg-red" variant="danger" type="submit">Kirjaudu</Button>
   </Form>
 );
 

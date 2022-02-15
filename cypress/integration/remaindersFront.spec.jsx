@@ -1,8 +1,8 @@
 describe('Remainders ', function() {
     beforeEach(function() {
         cy.visit('http://localhost:3000');
-        cy.get('#username').type('Matti');
-        cy.get('#password').type('Itikka2022');
+        cy.get('#username').type('Matti Möttönen');
+        cy.get('#password').type('tosisalainen');
         cy.get('#login').click();
     })
     it('sivu avautuu', function() {
@@ -43,11 +43,24 @@ describe('Remainders ', function() {
         cy.contains('Kirjautuneena');
     })
     
-    it('token vanhenee', function() {
+    it('token vanhenee haettaessa 10min toimettomuuden jälkeen', function() {
         // Cypress.config('defaultCommandTimeout', 10000);
         cy.get('#ctrl').type('Matti');
         cy.wait(602000)
         cy.get('#searchbtn').click();
+        cy.wait(10000);
+        // cy.contains("Istunto vanhentunut");
+        cy.on('window:alert', (str) => {
+            expect(str).to.equal("Istunto vanhentunut")
+        })
+        cy.wait(5000);
+        cy.contains('Kirjaudu');
+    })
+
+    it('token vanhenee päivittäessä 10min toimettomuuden jälkeen', function() {
+        cy.get('#ctrl').type('Matti');
+        cy.wait(602000)
+        cy.reload();
         cy.wait(10000);
         // cy.contains("Istunto vanhentunut");
         cy.on('window:alert', (str) => {

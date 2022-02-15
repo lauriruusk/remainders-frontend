@@ -3,12 +3,8 @@ import { Card } from 'react-bootstrap';
 
 const DCard = ({ rm, idx }) => (
   <div>
-    <Card className="bg-yellow">
-      <Card.Body>
-        <Card.Text className="text-center">
-          {idx + 1}
-          .
-        </Card.Text>
+    <Card className="card-bground">
+      <Card.Body className="yelloww">
         <Card.Text>
           <strong>Vastaanottaja:</strong>
           {' '}
@@ -29,6 +25,10 @@ const DCard = ({ rm, idx }) => (
           <strong>Generoitu:</strong>
           {' '}
           {rm.updated_at}
+        </Card.Text>
+        <Card.Text className="text-end">
+          {idx + 1}
+          .
         </Card.Text>
       </Card.Body>
     </Card>

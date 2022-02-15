@@ -8,10 +8,12 @@
     "bootstrap": "^5.1.1",
     "chromedriver": "^97.0.0",
     "eslint-config-airbnb-base": "^14.2.1",
+    "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-rc.0",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "sass": "^1.49.7",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -19,7 +21,8 @@
     "build": "react-scripts build",
     "test": "jest --verbose",
     "eject": "react-scripts eject",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "scss": "node-sass --watch scss -o css"
   },
   "eslintConfig": {
     "extends": [

@@ -13,6 +13,7 @@ import loginService from './services/login';
 import errorManager from './controllers/errorctrl';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+// import '../css/custom.css'
 // import './scss/custom.scss'
 
 const App = () => {
@@ -30,20 +31,19 @@ const App = () => {
   useEffect(() => {
     const fetchRemainders = async () => {
       const loggedUserJSON = window.localStorage.getItem('loggedUser');
-      try {
-        if (loggedUserJSON) {
+      if(loggedUserJSON) {
         const usr = JSON.parse(loggedUserJSON);
         setUser(usr);
         remindServe.setToken(usr.token);
-        const refreshRemind = await remindServe.getAsyncLatest();
-        setRemainders(refreshRemind);
+        const refreshRemind = '';
+        try {
+          refreshRemind = await remindServe.getAsyncLatest();
+        } catch (e) {
+          errorManager(e);
+          logout();
         }
-        
-      } catch (e) {
-        errorManager(e);
-        logout();
+        setRemainders(refreshRemind);
       }
-    
     }
     fetchRemainders();
   }, []);
@@ -52,9 +52,11 @@ const App = () => {
   // vanhentunut, palauttaa virheilmoituksen ja kirjautuu ulos.
   const searchRemainders = (event) => {
     event.preventDefault();
-    // console.log(filtr);
     if(filtr === '') {
-      remindServe.getAsyncLatest().then((response) => {setRemainders(response)})
+      remindServe.getAsyncLatest().then((response) => {setRemainders(response)}).catch((e) => {
+        errorManager(e);
+          logout();
+      })
     } else {
       remindServe
       .getSearch(filtr)
@@ -62,10 +64,7 @@ const App = () => {
         setRemainders(response);
       }).catch((e) => {
         errorManager(e);
-        if(e.status === 401) {
           logout();
-        }
-        
       });
     }
   };
@@ -89,7 +88,6 @@ const App = () => {
       window.localStorage.setItem(
         'loggedUser', JSON.stringify(kaytt),
       );
-      // console.log(window.localStorage.getItem('loggedUser'))
       remindServe.setToken(kaytt.token);
       setUser(kaytt);
       setUsername('');

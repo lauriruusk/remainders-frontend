@@ -86,4 +86,20 @@ Tämä komponentti huolehtii hausta *SearchForm*-komponentilla. Lisäksi kompone
 
 ### Footer
 
-Tässä komponentissa 
+Tämä komponentti sisältää lähteen taustakuvalle.
+
+### Funktiot
+
+Komponenttien lisäksi ohjelmalla on muutama erillinen funktiokomponentti:
+
+- remainders.js huolehtii muistutusten hausta. Mikäli erillistä hakukriteeriä ei ole, ohjelma hakee 25 viimeisintä muistutusta. Lisäksi komponentti asettaa tokenin istunnolle.
+
+- login.js kirjaa käyttäjän sisään ohjelmaan.
+
+- errorctrl käsittelee muutamia ohjelmaan liittyviä virheilmoituksia.
+
+- config.js sisältää backendin osoitteen.
+
+## Testaus
+
+Ohjelman toimintaa testataan cypress-kirjastolla. Ohjelmaan on tehty testit kirjautumiselle, haulle ja tokenin vanhentumiselle.

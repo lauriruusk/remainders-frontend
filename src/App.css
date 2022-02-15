@@ -47,7 +47,6 @@ body {
 }
 
 #actionform {
-  background-color: lightgray;
   margin-top: 100px;
   width: 35%;
 }
@@ -69,4 +68,8 @@ footer {
 
 #hworkaround {
   background-color: black;
+}
+
+.card-bground {
+  background-color: #f3f29f;
 }

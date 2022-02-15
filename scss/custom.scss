@@ -1,7 +1,11 @@
-@import "node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
 $theme-colors: (
-    "$bg-black": #000000
-    "$bg-red": #ff0000
-    "$bg-yellow": #fffd7d
+    "newblack": #000000,
+    "redd": #ff0000,
+    "yelloww": #bbb800,
 );
+
+.card-bground {
+    background-color: #faf756;
+}
