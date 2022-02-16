@@ -21,9 +21,12 @@ describe('Remainders ', function() {
     })
 
     it('toinen haku', function() {
-        cy.get('#ctrl').type('nina');
+        cy.get('#ctrl').type('matti');
         cy.get('#searchbtn').click();
-        cy.contains('nina');
+        cy.contains('matti');
+        cy.get('#ctrl').type('tiina');
+        cy.get('#searchbtn').click();
+        cy.contains('tiina');
     })
 
     it('ensin haku, sitten tyhjä haku', function () {

@@ -102,4 +102,13 @@ Komponenttien lisäksi ohjelmalla on muutama erillinen funktiokomponentti:
 
 ## Testaus
 
-Ohjelman toimintaa testataan cypress-kirjastolla. Ohjelmaan on tehty testit kirjautumiselle, haulle ja tokenin vanhentumiselle.
+Ohjelman toimintaa testataan cypress-kirjastolla. kirjasto toimii selaimessa ohjelman ollesa kehitysvaiheessa. Ohjelmaa testataan seuraavilta osin:
+
+- sivun latautuminen
+- kirjautumisen onnistuminen
+- muistutuskorttien tulostuminen
+- hakutoiminnan onnistuminen
+- kaksi perättäistä hakua
+- kaksi perättäistä hakua, joista toinen on ns. "tyhjä"
+- token pysyy sivun päivittyessä
+- uloskirjautuminen tokenin vanhentuessa (toimii haun tai sivun päivittämisen yhteydessä)
