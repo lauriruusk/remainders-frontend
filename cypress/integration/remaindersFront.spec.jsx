@@ -15,7 +15,7 @@ describe('Remainders ', function() {
     })
 
     it('haku toimii', function() {
-        cy.get('#ctrl').type('Matti');
+        cy.get('#ctrl').type('matti');
         cy.get('#searchbtn').click();
         cy.contains('matti');
     })
@@ -24,15 +24,16 @@ describe('Remainders ', function() {
         cy.get('#ctrl').type('matti');
         cy.get('#searchbtn').click();
         cy.contains('matti');
+        cy.get('#ctrl').clear()
         cy.get('#ctrl').type('tiina');
         cy.get('#searchbtn').click();
         cy.contains('tiina');
     })
 
     it('ensin haku, sitten tyhjä haku', function () {
-        cy.get('#ctrl').type('nina');
+        cy.get('#ctrl').type('matti');
         cy.get('#searchbtn').click();
-        cy.contains('nina');
+        cy.contains('matti');
         cy.get('#ctrl').clear();
         cy.get('#searchbtn').click();
         cy.wait(1000);

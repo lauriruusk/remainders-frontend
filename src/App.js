@@ -32,18 +32,18 @@ const App = () => {
     const fetchRemainders = async () => {
       const loggedUserJSON = window.localStorage.getItem('loggedUser');
       if(loggedUserJSON) {
-        const usr = JSON.parse(loggedUserJSON);
-        setUser(usr);
-        remindServe.setToken(usr.token);
-        const refreshRemind = '';
         try {
-          refreshRemind = await remindServe.getAsyncLatest();
+          const usr = JSON.parse(loggedUserJSON);
+          setUser(usr);
+          remindServe.setToken(usr.token);
+          const refreshRemind = await remindServe.getAsyncLatest();
+          setRemainders(refreshRemind);
         } catch (e) {
           errorManager(e);
           logout();
         }
-        setRemainders(refreshRemind);
-      }
+
+      } 
     }
     fetchRemainders();
   }, []);
