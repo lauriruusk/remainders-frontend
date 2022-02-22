@@ -11,7 +11,7 @@ const LoginForm = ({ hLog, setUsername, setPass }) => (
       <Form.Label className="mt-1 text-light">Salasana</Form.Label>
       <Form.Control id="password" type="password" placeholder="salasana" onChange={({ target }) => setPass(target.value)} />
     </Form.Group>
-    <Button id="login" className="mb-3 bg-red" variant="danger" type="submit">Kirjaudu</Button>
+    <Button id="login" className="mb-3 bg-red" type="submit">Kirjaudu</Button>
   </Form>
 );
 

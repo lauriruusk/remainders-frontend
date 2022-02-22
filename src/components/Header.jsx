@@ -16,7 +16,7 @@ const Header = ({ user, search, setFlt, logout }) => {
             {user !== null && <LoggedInForm user={user}/>}
             {user !== null && <SearchForm search={search} setFlt={setFlt} />}
             <p> </p>
-            {user !== null && <Button className="text-light ml-5 bg-red" variant="danger" onClick={logout}>Kirjaudu ulos</Button>}
+            {user !== null && <Button id="lout" className="text-light ml-5 bg-red" onClick={logout}>Kirjaudu ulos</Button>}
           </Navbar.Collapse>
         </Container>
       </Navbar>
