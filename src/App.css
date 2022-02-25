@@ -44,7 +44,7 @@
 body {
   background-size: cover;
   background-attachment: fixed;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 #actionform {
@@ -53,7 +53,7 @@ body {
 }
 
 footer {
-  margin-top: 50px;
+  margin-top: 100px;
   color: white;
   background-color: #000000;
   padding-bottom: 1px;
@@ -61,6 +61,7 @@ footer {
   left: 0;
   bottom: 0;
   right: 0;
+  text-align: center;
 }
 
 #logged {
