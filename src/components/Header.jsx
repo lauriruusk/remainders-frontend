@@ -3,7 +3,6 @@ import { Container, Navbar, Button } from 'react-bootstrap';
 import SearchForm from './SearchForm';
 import LoggedInForm from './LoggedInForm';
 
-// Header, johon on istutettu 
 const Header = ({ user, search, setFlt, logout }) => {
   
   return (

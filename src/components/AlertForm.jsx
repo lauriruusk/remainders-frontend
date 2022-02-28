@@ -3,6 +3,8 @@ import React from 'react';
 import { Alert } from 'react-bootstrap';
 
 // tämä osa ilmoittaa onnistuneesta tai virheellisestä kirjautumisesta.
+
+// visual report on login success. green on success, red on failure
 const AlertForm = ({ setShow, success, loginMsg }) => {
   if (!success) {
     return (

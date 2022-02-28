@@ -5,6 +5,9 @@ import DCard from './DCard';
 
 // tähän ruudukkoon tuodaan haetut muistutukset kortteina. mikäli muistutuksia ei jostain syystä
 // saada tuotua, luo yhden kortin, jossa asiasta mainitaan
+
+// requested notifications are displayed in this grid. If notifications can't be received for some reason,
+// progrma will create one blank card.
 const DataGrid = ({ rem }) => {
   if (!Array.isArray(rem)) {
     return (

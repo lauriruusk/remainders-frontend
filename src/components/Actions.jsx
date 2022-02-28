@@ -6,6 +6,8 @@ import LoginForm from './LoginForm';
 import AlertForm from './AlertForm';
 
 // Actions-komponentti. sisältää kirjautumisen virhe/onnistumisilmoituksen ja varsinaisen kirjautumisikkunan
+
+// This component contains error window for login actions and input fields for login.
 const Actions = ({
   hLog, setUsername, setPass, user, show, setShow, success, loginMsg
 }) => (

@@ -28,6 +28,9 @@ const App = () => {
 
   // mikäli käyttäjä on jo kirjautunut, hakee selaimen muistista kirjautumistiedot
   // ja hakee muistutukset.
+
+  // If user is already logged in, this function will fetch token from local storage and
+  // get notifications
   useEffect(() => {
     const fetchRemainders = async () => {
       const loggedUserJSON = window.localStorage.getItem('loggedUser');
@@ -50,6 +53,9 @@ const App = () => {
 
   // hakufunktio. etsii annetun hakusanan sisältäviä muistutuksia. Mikäli token on 
   // vanhentunut, palauttaa virheilmoituksen ja kirjautuu ulos.
+
+  // This search function searches notifications based on given word. If token is expired, returns
+  // an error message and logs out
   const searchRemainders = (event) => {
     event.preventDefault();
     if(filtr === '') {
@@ -72,6 +78,10 @@ const App = () => {
   // kirjautuminen. hakee käyttäjänimen ja salasanan perusteella backendilta tokenin, ja tallentaa
   // sen selaimen muistiin. Kirjautumisen onnistuessa hakee muistutuksen näkyville, ja ilmoittaa
   // onnistumisesta vihreällä ikkunalla. Epäonnistuminen ilmoitetaan punaisella ikkunalla.
+
+  // Login handler. fetches a token based on username and password, and saves it to browser's local storage.
+  // Gets initial notifications on successful searchm and reports on success with a green window.
+  // Failure is reported on red window.
   const handleLogin = async (event) => {
     event.preventDefault();
 
@@ -105,6 +115,8 @@ const App = () => {
   };
 
   // uloskirjautuminen. poistaa kirjautumistiedot selaimen muistista ja lataa sivun uudestaan.
+
+  // logout function. Removes login info from local storage and refreshes the page.
   const logout = () => {
     window.localStorage.removeItem('loggedUser');
     window.location.reload();
@@ -113,6 +125,9 @@ const App = () => {
   // varsinainen näkymä. Header-osiossa otsikko, ehtojen täyttyessä kuka on kirjautunut, haku ja
   // uloskirjautuminen. Pääosassa näytetään joko kirjautumisikkuna tai muistutuskortit. Footerissa
   // organisaation tiedot.
+
+  // Visual layout. Header includes header, who's logged in, searhc and logout. Main part shows
+  // either login window or notifications. Footer has mainly link to author of background image
   return (
     <div className="App">
       <Header user={user} search={searchRemainders} setFlt={setFiltr} logout={logout} />
