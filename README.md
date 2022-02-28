@@ -63,5 +63,5 @@ Tests also include basic tests for general access to database and general perfor
 
 ## Background image conversion
 
-There has been mild modifications to image format on background: it has been converted into webp using [Google's converter](https://deverlopers.google.com/speed/webp) in order to increase performance. Current image was generated with the command `cwebp -q 50 input_file -o output_file.webp`
+There has been mild modifications to image format on background: it has been converted into webp using [Google's converter](https://developers.google.com/speed/webp) in order to increase performance. Current image was generated with the command `cwebp -q 50 input_file -o output_file.webp`
 
